@@ -1,0 +1,245 @@
+{
+  "type": "bundle",
+  "id": "bundle--eb752d86-53f7-4f86-8a25-9df8dd239637",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--38fdb90f-b3f9-44f3-8bf9-617663d44eca",
+      "created": "2026-06-03T12:55:27+00:00",
+      "modified": "2026-06-03T12:55:27+00:00",
+      "name": "ChakravyuhNet",
+      "identity_class": "system"
+    },
+    {
+      "type": "ipv4-addr",
+      "spec_version": "2.1",
+      "id": "ipv4-addr--ed1d587d-9894-4c2f-8c72-404881547bf5",
+      "value": "203.0.113.77"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--b35f722e-8dee-476a-9c7b-e3b4754b4082",
+      "created": "2026-06-03T12:55:27+00:00",
+      "modified": "2026-06-03T12:55:27+00:00",
+      "name": "Captured payload ef065a721284",
+      "is_family": false,
+      "description": "Payload captured by ChakravyuhNet and stored inertly for analysis.",
+      "x_chakravyuhnet_sha256": "ef065a721284b10976949dc81122213b5f6276274b7daac0bd9e064ce7ace93a",
+      "x_chakravyuhnet_filename": "dropper-demo.bin",
+      "x_chakravyuhnet_size_bytes": 27
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--7e56146a-0911-4fc2-94d5-22a0b65decb3",
+      "created": "2026-06-03T12:55:27+00:00",
+      "modified": "2026-06-03T12:55:27+00:00",
+      "name": "Network Service Discovery",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1046"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--619208f9-593a-4f32-9a50-a3b41d2ff6d9",
+      "created": "2026-06-03T12:55:27+00:00",
+      "modified": "2026-06-03T12:55:27+00:00",
+      "name": "ChakravyuhNet honeypot incident report",
+      "published": "2026-06-03T12:55:27+00:00",
+      "report_types": [
+        "threat-report"
+      ],
+      "object_refs": [
+        "identity--38fdb90f-b3f9-44f3-8bf9-617663d44eca",
+        "ipv4-addr--ed1d587d-9894-4c2f-8c72-404881547bf5",
+        "malware--b35f722e-8dee-476a-9c7b-e3b4754b4082"
+      ],
+      "x_chakravyuhnet_commands": [
+        {
+          "command": "uname -a",
+          "timestamp": "2026-06-03T12:47:47.900407+00:00",
+          "output_preview": "Linux fin-api-01 6.5.0-44-generic #44-Ubuntu SMP x86_64 GNU/Linux"
+        },
+        {
+          "command": "netstat -antp 2>/dev/null",
+          "timestamp": "2026-06-03T12:50:05.245260+00:00",
+          "output_preview": "Proto Local Address           Foreign Address         State       PID/Program name\ntcp   0.0.0.0:22              0.0.0.0:*               LISTEN      412/sshd\ntcp   0.0.0.0:8080            0.0.0.0:*               LISTEN      417/uvicorn\ntcp   10.77.4.12:5432         10.77.4.18:543"
+        },
+        {
+          "command": "env",
+          "timestamp": "2026-06-03T12:50:32.348537+00:00",
+          "output_preview": "SHELL=/bin/bash\nUSER=svc-finance\nHOME=/srv/finance-api\nPATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin\nAPP_ENV=production\nDB_HOST=10.77.4.18\nLANG=en_US.UTF-8"
+        },
+        {
+          "command": "which psql",
+          "timestamp": "2026-06-03T12:50:50.761663+00:00",
+          "output_preview": "/usr/bin/psql"
+        },
+        {
+          "command": "curl -I https://www.google.com",
+          "timestamp": "2026-06-03T12:51:08.575826+00:00",
+          "output_preview": "HTTP/1.1 200 OK\nserver: nginx/1.24.0\ncontent-length: 18421\nsaved response body to ./exports/session-cache.bin"
+        }
+      ],
+      "x_chakravyuhnet_ai_events": [
+        {
+          "message": "MTD Cycle 65: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:38:08.706813+00:00"
+        },
+        {
+          "message": "MTD Cycle 66: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:39:08.718781+00:00"
+        },
+        {
+          "message": "MTD Cycle 67: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:40:08.733619+00:00"
+        },
+        {
+          "message": "MTD Cycle 68: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:41:08.744222+00:00"
+        },
+        {
+          "message": "MTD Cycle 69: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:42:08.760492+00:00"
+        },
+        {
+          "message": "MTD Cycle 70: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:43:08.770682+00:00"
+        },
+        {
+          "message": "MTD Cycle 71: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:44:08.773792+00:00"
+        },
+        {
+          "message": "MTD Cycle 72: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:45:08.770303+00:00"
+        },
+        {
+          "message": "MTD Cycle 73: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:46:08.780189+00:00"
+        },
+        {
+          "message": "MTD Cycle 74: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:47:08.777703+00:00"
+        },
+        {
+          "message": "Benign reconnaissance: 'uname'.  Serving plausible fake output.  No topology change required.",
+          "level": "info",
+          "timestamp": "2026-06-03T12:47:47.900407+00:00"
+        },
+        {
+          "message": "RL policy \u2192 HONEYTOKEN (rl_policy)",
+          "level": "info",
+          "timestamp": "2026-06-03T12:47:47.900407+00:00"
+        },
+        {
+          "message": "MTD Cycle 75: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:48:08.795813+00:00"
+        },
+        {
+          "message": "MTD Cycle 76: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:49:08.797202+00:00"
+        },
+        {
+          "message": "Benign reconnaissance: 'netstat'.  Serving plausible fake output.  No topology change required.",
+          "level": "info",
+          "timestamp": "2026-06-03T12:50:05.245260+00:00"
+        },
+        {
+          "message": "RL policy \u2192 HONEYTOKEN (rl_policy)",
+          "level": "info",
+          "timestamp": "2026-06-03T12:50:05.245260+00:00"
+        },
+        {
+          "message": "MTD Cycle 77: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:50:08.814698+00:00"
+        },
+        {
+          "message": "Sensitive data access: 'env' targeting secrets.  Serving honeytokens.  Node telemetry pulse triggered. | Behavioral match: Lazarus Group (40% confidence). Risk score: 35/100.",
+          "level": "warn",
+          "timestamp": "2026-06-03T12:50:32.348537+00:00"
+        },
+        {
+          "message": "RL policy \u2192 ESCALATE (rl_policy)",
+          "level": "info",
+          "timestamp": "2026-06-03T12:50:32.348537+00:00"
+        },
+        {
+          "message": "Honeytoken beacon planted: financial-report-af2007fe.html (ID: af2007fe). File will phone home if opened on attacker's machine.",
+          "level": "warn",
+          "timestamp": "2026-06-03T12:50:32.383091+00:00"
+        },
+        {
+          "message": "Benign reconnaissance: 'which'.  Serving plausible fake output.  No topology change required. | Behavioral match: Lazarus Group (40% confidence). Risk score: 35/100.",
+          "level": "info",
+          "timestamp": "2026-06-03T12:50:50.761663+00:00"
+        },
+        {
+          "message": "RL policy \u2192 HONEYTOKEN (rl_policy)",
+          "level": "info",
+          "timestamp": "2026-06-03T12:50:50.761663+00:00"
+        },
+        {
+          "message": "WEAPON DETECTED: 'curl' \u2014 payload staging/execution attempt.  Trapdoor engaged.  Vault capture sequence initiated. | Behavioral match: Lazarus Group (40% confidence). Risk score: 35/100.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:51:08.575826+00:00"
+        },
+        {
+          "message": "RL policy \u2192 HONEYTOKEN (rl_policy)",
+          "level": "info",
+          "timestamp": "2026-06-03T12:51:08.575826+00:00"
+        },
+        {
+          "message": "MTD Cycle 78: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:51:08.825104+00:00"
+        },
+        {
+          "message": "MTD Cycle 79: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:52:08.826920+00:00"
+        },
+        {
+          "message": "MTD Cycle 80: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:53:08.828483+00:00"
+        },
+        {
+          "message": "MTD Cycle 81: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:54:08.829312+00:00"
+        },
+        {
+          "message": "MTD Cycle 82: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:55:08.830558+00:00"
+        },
+        {
+          "message": "Trapdoor triggered. Payload sealed and hashing completed.",
+          "level": "alert",
+          "timestamp": "2026-06-03T12:55:27.184986+00:00"
+        }
+      ],
+      "x_chakravyuhnet_phase": "payload_captured"
+    }
+  ]
+}

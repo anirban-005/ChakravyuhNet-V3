@@ -1,0 +1,115 @@
+{
+  "type": "bundle",
+  "id": "bundle--f3ee37c5-48c9-4d4c-809f-6066f2d6ba78",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--9bf67325-34ec-4df2-b8c5-f2c8f04a6333",
+      "created": "2026-06-11T08:12:37+00:00",
+      "modified": "2026-06-11T08:12:37+00:00",
+      "name": "ChakravyuhNet",
+      "identity_class": "system"
+    },
+    {
+      "type": "ipv4-addr",
+      "spec_version": "2.1",
+      "id": "ipv4-addr--43fbdcfa-22dd-4bc3-9e75-e0b08da4fc94",
+      "value": "203.0.113.77"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--0b3817bb-fd22-4f16-ad4f-9934bae69aa8",
+      "created": "2026-06-11T08:12:37+00:00",
+      "modified": "2026-06-11T08:12:37+00:00",
+      "name": "Captured payload fb08049f5962",
+      "is_family": false,
+      "description": "Payload captured by ChakravyuhNet and stored inertly for analysis.",
+      "x_chakravyuhnet_sha256": "fb08049f5962d3cc90bc6adf26116cee735f03b4c664f3018661dc582e92f3b7",
+      "x_chakravyuhnet_filename": "dropper-demo.bin",
+      "x_chakravyuhnet_size_bytes": 67
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--e93d1661-a50d-4289-a20f-3dac394e8f43",
+      "created": "2026-06-11T08:12:37+00:00",
+      "modified": "2026-06-11T08:12:37+00:00",
+      "name": "Network Service Discovery",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1046"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--0d856c24-e852-4cee-85ba-346066b099e5",
+      "created": "2026-06-11T08:12:37+00:00",
+      "modified": "2026-06-11T08:12:37+00:00",
+      "name": "ChakravyuhNet honeypot incident report",
+      "published": "2026-06-11T08:12:37+00:00",
+      "report_types": [
+        "threat-report"
+      ],
+      "object_refs": [
+        "identity--9bf67325-34ec-4df2-b8c5-f2c8f04a6333",
+        "ipv4-addr--43fbdcfa-22dd-4bc3-9e75-e0b08da4fc94",
+        "malware--0b3817bb-fd22-4f16-ad4f-9934bae69aa8"
+      ],
+      "x_chakravyuhnet_commands": [
+        {
+          "command": "curl",
+          "timestamp": "2026-06-11T08:11:22.518966+00:00",
+          "output_preview": "bash: curl: command not found"
+        },
+        {
+          "command": "nmap",
+          "timestamp": "2026-06-11T08:11:25.887417+00:00",
+          "output_preview": "Starting Nmap 7.95\nNmap scan report for 10.77.4.1\nPORT     STATE SERVICE\n22/tcp   open  ssh\n80/tcp   open  http\n5432/tcp open  postgresql\n8080/tcp open  http-proxy\nNmap done: 1 IP address scanned in 93.42 seconds"
+        },
+        {
+          "command": "ssh",
+          "timestamp": "2026-06-11T08:11:32.250349+00:00",
+          "output_preview": "bash: ssh: command not found"
+        }
+      ],
+      "x_chakravyuhnet_ai_events": [
+        {
+          "message": "Maze initialized with low-interaction gateway decoys.",
+          "level": "info",
+          "timestamp": "2026-06-11T08:11:14.287475+00:00"
+        },
+        {
+          "message": "WEAPON DETECTED: 'curl' \u2014 payload staging/execution attempt.  Trapdoor engaged.  Vault capture sequence initiated.",
+          "level": "alert",
+          "timestamp": "2026-06-11T08:11:22.518966+00:00"
+        },
+        {
+          "message": "Aggressive tool detected: 'nmap'.  Tarpit swarm activated \u2014 synthetic latency injected to degrade tool accuracy.",
+          "level": "warn",
+          "timestamp": "2026-06-11T08:11:25.887417+00:00"
+        },
+        {
+          "message": "Lateral movement attempt via 'ssh'.  RL policy spawning decoy infrastructure along predicted attacker path.",
+          "level": "alert",
+          "timestamp": "2026-06-11T08:11:32.250349+00:00"
+        },
+        {
+          "message": "Trapdoor triggered.  Payload sealed and hashing completed.",
+          "level": "alert",
+          "timestamp": "2026-06-11T08:12:12.592328+00:00"
+        },
+        {
+          "message": "Trapdoor triggered.  Payload sealed and hashing completed.",
+          "level": "alert",
+          "timestamp": "2026-06-11T08:12:37.708223+00:00"
+        }
+      ],
+      "x_chakravyuhnet_phase": "payload_captured"
+    }
+  ]
+}

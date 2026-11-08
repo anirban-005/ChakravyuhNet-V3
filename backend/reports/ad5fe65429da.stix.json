@@ -1,0 +1,120 @@
+{
+  "type": "bundle",
+  "id": "bundle--27621032-44ef-4a6f-89cd-00f1b0984417",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--d6019ae1-3331-42d1-9c89-92e2f060c103",
+      "created": "2026-06-10T17:55:30+00:00",
+      "modified": "2026-06-10T17:55:30+00:00",
+      "name": "ChakravyuhNet",
+      "identity_class": "system"
+    },
+    {
+      "type": "ipv4-addr",
+      "spec_version": "2.1",
+      "id": "ipv4-addr--c10db44f-45b0-43b9-a97c-3cc2cc0e95e9",
+      "value": "203.0.113.77"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--a21d427d-4a0e-4562-a9e2-0f0d6d3ff25f",
+      "created": "2026-06-10T17:55:30+00:00",
+      "modified": "2026-06-10T17:55:30+00:00",
+      "name": "Captured payload fb08049f5962",
+      "is_family": false,
+      "description": "Payload captured by ChakravyuhNet and stored inertly for analysis.",
+      "x_chakravyuhnet_sha256": "fb08049f5962d3cc90bc6adf26116cee735f03b4c664f3018661dc582e92f3b7",
+      "x_chakravyuhnet_filename": "dropper-demo.bin",
+      "x_chakravyuhnet_size_bytes": 67
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--35265673-d4fa-4fde-8289-f162009fba7a",
+      "created": "2026-06-10T17:55:30+00:00",
+      "modified": "2026-06-10T17:55:30+00:00",
+      "name": "Network Service Discovery",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1046"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--47371da0-c3e8-4402-bf1d-fd3e158b9d26",
+      "created": "2026-06-10T17:55:30+00:00",
+      "modified": "2026-06-10T17:55:30+00:00",
+      "name": "ChakravyuhNet honeypot incident report",
+      "published": "2026-06-10T17:55:30+00:00",
+      "report_types": [
+        "threat-report"
+      ],
+      "object_refs": [
+        "identity--d6019ae1-3331-42d1-9c89-92e2f060c103",
+        "ipv4-addr--c10db44f-45b0-43b9-a97c-3cc2cc0e95e9",
+        "malware--a21d427d-4a0e-4562-a9e2-0f0d6d3ff25f"
+      ],
+      "x_chakravyuhnet_commands": [
+        {
+          "command": "nmap",
+          "timestamp": "2026-06-10T17:54:19.801113+00:00",
+          "output_preview": "Starting Nmap 7.95\nNmap scan report for 10.77.4.1\nPORT     STATE SERVICE\n22/tcp   open  ssh\n80/tcp   open  http\n5432/tcp open  postgresql\n8080/tcp open  http-proxy\nNmap done: 1 IP address scanned in 93.42 seconds"
+        },
+        {
+          "command": "nmap",
+          "timestamp": "2026-06-10T17:54:23.217524+00:00",
+          "output_preview": "Starting Nmap 7.95\nNmap scan report for 10.77.4.1\nPORT     STATE SERVICE\n22/tcp   open  ssh\n80/tcp   open  http\n5432/tcp open  postgresql\n8080/tcp open  http-proxy\nNmap done: 1 IP address scanned in 93.42 seconds"
+        },
+        {
+          "command": "ssh",
+          "timestamp": "2026-06-10T17:54:58.259829+00:00",
+          "output_preview": "bash: ssh: command not found"
+        },
+        {
+          "command": "curl",
+          "timestamp": "2026-06-10T17:55:12.086774+00:00",
+          "output_preview": "bash: curl: command not found"
+        }
+      ],
+      "x_chakravyuhnet_ai_events": [
+        {
+          "message": "Maze initialized with low-interaction gateway decoys.",
+          "level": "info",
+          "timestamp": "2026-06-10T17:53:48.371163+00:00"
+        },
+        {
+          "message": "Aggressive tool detected: 'nmap'.  Tarpit swarm activated \u2014 synthetic latency injected to degrade tool accuracy.",
+          "level": "warn",
+          "timestamp": "2026-06-10T17:54:19.801113+00:00"
+        },
+        {
+          "message": "Aggressive tool detected: 'nmap'.  Tarpit swarm activated \u2014 synthetic latency injected to degrade tool accuracy.",
+          "level": "warn",
+          "timestamp": "2026-06-10T17:54:23.217524+00:00"
+        },
+        {
+          "message": "Lateral movement attempt via 'ssh'.  RL policy spawning decoy infrastructure along predicted attacker path.",
+          "level": "alert",
+          "timestamp": "2026-06-10T17:54:58.259829+00:00"
+        },
+        {
+          "message": "WEAPON DETECTED: 'curl' \u2014 payload staging/execution attempt.  Trapdoor engaged.  Vault capture sequence initiated.",
+          "level": "alert",
+          "timestamp": "2026-06-10T17:55:12.086774+00:00"
+        },
+        {
+          "message": "Trapdoor triggered.  Payload sealed and hashing completed.",
+          "level": "alert",
+          "timestamp": "2026-06-10T17:55:29.998440+00:00"
+        }
+      ],
+      "x_chakravyuhnet_phase": "payload_captured"
+    }
+  ]
+}

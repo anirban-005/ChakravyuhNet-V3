@@ -1,0 +1,135 @@
+{
+  "type": "bundle",
+  "id": "bundle--edabe8fe-c1b3-4ac9-b03c-c7de81f99240",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--6c33e731-3665-4687-9bee-d31903c252b2",
+      "created": "2026-06-09T10:59:29+00:00",
+      "modified": "2026-06-09T10:59:29+00:00",
+      "name": "ChakravyuhNet",
+      "identity_class": "system"
+    },
+    {
+      "type": "ipv4-addr",
+      "spec_version": "2.1",
+      "id": "ipv4-addr--93f68c69-60e6-4fac-b496-cb79deaf75ec",
+      "value": "203.0.113.77"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--6c7b6246-9509-428f-a108-1ad5401816c3",
+      "created": "2026-06-09T10:59:29+00:00",
+      "modified": "2026-06-09T10:59:29+00:00",
+      "name": "Captured payload ef065a721284",
+      "is_family": false,
+      "description": "Payload captured by ChakravyuhNet and stored inertly for analysis.",
+      "x_chakravyuhnet_sha256": "ef065a721284b10976949dc81122213b5f6276274b7daac0bd9e064ce7ace93a",
+      "x_chakravyuhnet_filename": "dropper-demo.bin",
+      "x_chakravyuhnet_size_bytes": 27
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--87927a80-aa76-4ec4-a3a4-43df9114b4f9",
+      "created": "2026-06-09T10:59:29+00:00",
+      "modified": "2026-06-09T10:59:29+00:00",
+      "name": "Network Service Discovery",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1046"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--4b21117f-fb5e-4aeb-a588-9d94063017c8",
+      "created": "2026-06-09T10:59:29+00:00",
+      "modified": "2026-06-09T10:59:29+00:00",
+      "name": "ChakravyuhNet honeypot incident report",
+      "published": "2026-06-09T10:59:29+00:00",
+      "report_types": [
+        "threat-report"
+      ],
+      "object_refs": [
+        "identity--6c33e731-3665-4687-9bee-d31903c252b2",
+        "ipv4-addr--93f68c69-60e6-4fac-b496-cb79deaf75ec",
+        "malware--6c7b6246-9509-428f-a108-1ad5401816c3"
+      ],
+      "x_chakravyuhnet_commands": [
+        {
+          "command": "nmap -sS -Pn 10.77.4.0/24",
+          "timestamp": "2026-06-09T10:52:23.047178+00:00",
+          "output_preview": "Starting Nmap 7.95\nNmap scan report for 10.77.4.1\nPORT     STATE SERVICE\n22/tcp   open  ssh\n80/tcp   open  http\n5432/tcp open  postgresql\n8080/tcp open  http-proxy\nNmap done: 1 IP address scanned in 93.42 seconds"
+        }
+      ],
+      "x_chakravyuhnet_ai_events": [
+        {
+          "message": "Maze initialized. AI brain online. Docker: LIVE. MTD active. RL policy ready.",
+          "level": "info",
+          "timestamp": "2026-06-09T10:52:19.816747+00:00"
+        },
+        {
+          "message": "Aggressive tool detected: 'nmap'.  Tarpit swarm activated \u2014 synthetic latency injected to degrade tool accuracy.",
+          "level": "warn",
+          "timestamp": "2026-06-09T10:52:23.048544+00:00"
+        },
+        {
+          "message": "RL policy \u2192 ESCALATE (30% (rule override))",
+          "level": "info",
+          "timestamp": "2026-06-09T10:52:23.048544+00:00"
+        },
+        {
+          "message": "[TARPIT] Swarm engaged \u2014 synthetic latency injected into attacker's TCP stream.",
+          "level": "alert",
+          "timestamp": "2026-06-09T10:52:23.048892+00:00"
+        },
+        {
+          "message": "MTD Cycle 47: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-09T10:52:36.089644+00:00"
+        },
+        {
+          "message": "MTD Cycle 48: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-09T10:53:36.087123+00:00"
+        },
+        {
+          "message": "MTD Cycle 49: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-09T10:54:36.084991+00:00"
+        },
+        {
+          "message": "MTD Cycle 50: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-09T10:55:36.083622+00:00"
+        },
+        {
+          "message": "MTD Cycle 51: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-09T10:56:36.096762+00:00"
+        },
+        {
+          "message": "MTD Cycle 52: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-09T10:57:36.098526+00:00"
+        },
+        {
+          "message": "MTD Cycle 53: IPs rotated, ports reshuffled \u2014 hacker map invalidated.",
+          "level": "alert",
+          "timestamp": "2026-06-09T10:58:36.103342+00:00"
+        },
+        {
+          "message": "Trapdoor triggered. Payload sealed and hashing completed.",
+          "level": "alert",
+          "timestamp": "2026-06-09T10:59:29.217908+00:00"
+        }
+      ],
+      "x_chakravyuhnet_phase": "payload_captured"
+    }
+  ]
+}

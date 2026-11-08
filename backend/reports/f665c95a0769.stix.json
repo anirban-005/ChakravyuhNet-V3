@@ -1,0 +1,95 @@
+{
+  "type": "bundle",
+  "id": "bundle--791eb553-5429-479c-b225-c42f1f451d21",
+  "objects": [
+    {
+      "type": "identity",
+      "spec_version": "2.1",
+      "id": "identity--5ce8e6ee-0bee-4628-afb0-6f8bee122387",
+      "created": "2026-06-09T11:49:57+00:00",
+      "modified": "2026-06-09T11:49:57+00:00",
+      "name": "ChakravyuhNet",
+      "identity_class": "system"
+    },
+    {
+      "type": "ipv4-addr",
+      "spec_version": "2.1",
+      "id": "ipv4-addr--35878846-93c1-4612-9d34-7ab185f2a782",
+      "value": "203.0.113.77"
+    },
+    {
+      "type": "malware",
+      "spec_version": "2.1",
+      "id": "malware--6e5c51cc-c737-46fd-8f5d-f6183cfa4084",
+      "created": "2026-06-09T11:49:57+00:00",
+      "modified": "2026-06-09T11:49:57+00:00",
+      "name": "Captured payload ef065a721284",
+      "is_family": false,
+      "description": "Payload captured by ChakravyuhNet and stored inertly for analysis.",
+      "x_chakravyuhnet_sha256": "ef065a721284b10976949dc81122213b5f6276274b7daac0bd9e064ce7ace93a",
+      "x_chakravyuhnet_filename": "dropper-demo.bin",
+      "x_chakravyuhnet_size_bytes": 27
+    },
+    {
+      "type": "attack-pattern",
+      "spec_version": "2.1",
+      "id": "attack-pattern--92c7f37c-2f08-4d77-afbc-476c5d72bc7e",
+      "created": "2026-06-09T11:49:57+00:00",
+      "modified": "2026-06-09T11:49:57+00:00",
+      "name": "Network Service Discovery",
+      "external_references": [
+        {
+          "source_name": "mitre-attack",
+          "external_id": "T1046"
+        }
+      ]
+    },
+    {
+      "type": "report",
+      "spec_version": "2.1",
+      "id": "report--6831ca00-b9ec-4f2a-9812-7f2abf06e4b6",
+      "created": "2026-06-09T11:49:57+00:00",
+      "modified": "2026-06-09T11:49:57+00:00",
+      "name": "ChakravyuhNet honeypot incident report",
+      "published": "2026-06-09T11:49:57+00:00",
+      "report_types": [
+        "threat-report"
+      ],
+      "object_refs": [
+        "identity--5ce8e6ee-0bee-4628-afb0-6f8bee122387",
+        "ipv4-addr--35878846-93c1-4612-9d34-7ab185f2a782",
+        "malware--6e5c51cc-c737-46fd-8f5d-f6183cfa4084"
+      ],
+      "x_chakravyuhnet_commands": [
+        {
+          "command": "nmap -sS -Pn 10.77.4.0/24",
+          "timestamp": "2026-06-09T11:49:56.610866+00:00",
+          "output_preview": "Starting Nmap 7.95\nNmap scan report for 10.77.4.1\nPORT     STATE SERVICE\n22/tcp   open  ssh\n80/tcp   open  http\n5432/tcp open  postgresql\n8080/tcp open  http-proxy\nNmap done: 1 IP address scanned in 93.42 seconds"
+        }
+      ],
+      "x_chakravyuhnet_ai_events": [
+        {
+          "message": "Maze initialized. AI brain online. Docker: LIVE. MTD active. RL policy ready.",
+          "level": "info",
+          "timestamp": "2026-06-09T11:49:56.007742+00:00"
+        },
+        {
+          "message": "Aggressive tool detected: 'nmap'.  Tarpit swarm activated \u2014 synthetic latency injected to degrade tool accuracy.",
+          "level": "warn",
+          "timestamp": "2026-06-09T11:49:56.610866+00:00"
+        },
+        {
+          "message": "RL policy \u2192 ESCALATE (28% (rule override))",
+          "level": "info",
+          "timestamp": "2026-06-09T11:49:56.610866+00:00"
+        },
+        {
+          "message": "Trapdoor triggered. Payload sealed and hashing completed.",
+          "level": "alert",
+          "timestamp": "2026-06-09T11:49:57.790260+00:00"
+        }
+      ],
+      "x_chakravyuhnet_phase": "payload_captured"
+    }
+  ]
+}
